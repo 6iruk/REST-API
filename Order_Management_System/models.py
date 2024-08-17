@@ -78,7 +78,7 @@ class Order(models.Model):
 
 
    def __str__(self):
-      return self.address
+      return self.address + '-' + self.driver
 
    def add_product(self, product):
       #Add a product to order product list
