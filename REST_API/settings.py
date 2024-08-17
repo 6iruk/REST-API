@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-nf-r(-%qwjb7fm$&sf%=*t9i+f6h!d$o*%$pb%cj0k!fcqk1_l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://rest-api-production-5cc7.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
