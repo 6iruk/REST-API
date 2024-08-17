@@ -26,10 +26,10 @@ SECRET_KEY = 'django-insecure-nf-r(-%qwjb7fm$&sf%=*t9i+f6h!d$o*%$pb%cj0k!fcqk1_l
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '*',
-    'https://rest-api-production-5cc7.up.railway.app',
+    '*'
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://rest-api-production-5cc7.up.railway.app']
 
 # Application definition
 
