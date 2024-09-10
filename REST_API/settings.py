@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-import os
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,11 +25,8 @@ SECRET_KEY = 'django-insecure-nf-r(-%qwjb7fm$&sf%=*t9i+f6h!d$o*%$pb%cj0k!fcqk1_l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '*'
-]
+ALLOWED_HOSTS = []
 
-CSRF_TRUSTED_ORIGINS = ['https://rest-api-production-5cc7.up.railway.app']
 
 # Application definition
 
@@ -40,13 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'orders',
-    'Order_Management_System',
+    'rest_framework',
+    'logistics',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -60,7 +56,7 @@ ROOT_URLCONF = 'REST_API.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,13 +117,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
