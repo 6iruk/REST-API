@@ -12,14 +12,9 @@ class SysUserFilter(django_filters.FilterSet):
         fields = ['query']
 
     def universal_search(self, queryset, name, value):
-        if value.replace(".", "", 1).isdigit():
-            value = Decimal(value)
-            return SysUser.objects.filter(
-                Q(price=value) | Q(cost=value)
-            )
 
         return SysUser.objects.filter(
-            Q(name__icontains=value) | Q(category__icontains=value)
+           Q(username__icontains=value) | Q(phone_number__icontains=value)
         )
 
 class VehicleOwnerFilter(django_filters.FilterSet):
@@ -38,7 +33,7 @@ class VehicleOwnerFilter(django_filters.FilterSet):
             )
 
         return VehicleOwner.objects.filter(
-            Q(name__icontains=value) | Q(category__icontains=value)
+            Q(phone_number__icontains=value)
         )
 
 class VehicleFilter(django_filters.FilterSet):

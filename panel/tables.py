@@ -2,7 +2,7 @@ import django_tables2 as tables
 from logistics.models import *
 
 class SysUserTable(tables.Table):
-    user = tables.Column(linkify=True)
+    edit = tables.Column(default="Edit",linkify=True)
 
     class Meta:
         model = SysUser
