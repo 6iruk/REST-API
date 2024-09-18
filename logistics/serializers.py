@@ -1,5 +1,5 @@
 from rest_framework import serializers 
-from models import *
+from logistics.models import *
 
 class SysUserSerializer(serializers.ModelSerializer):
     class Meta:

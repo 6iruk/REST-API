@@ -181,7 +181,7 @@ class Document(models.Model):
 
 class OrderStatusHistory(models.Model):
     order = models.ForeignKey(Order, related_name='status_history', on_delete=models.CASCADE)
-    status = models.CharField(max_length=20, choices=Order.ORDER_STATUS)
+    status = models.CharField(max_length=20, choices=ORDER_STATUS)
     timestamp = models.DateTimeField(auto_now_add=True)
     updated_by = models.ForeignKey(SysUser, on_delete=models.SET_NULL, null=True)
 

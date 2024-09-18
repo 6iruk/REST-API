@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from logistics.views import *
 from rest_framework.routers import DefaultRouter
+from panel import urls
 
 # Create a router and register our ViewSets with it.
 router = DefaultRouter()
@@ -36,6 +37,7 @@ router.register(r'status', OrderStatusHistoryViewSet, basename='status')
 
 
 urlpatterns = [
+    path('portal/', include(urls)),
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
 ]

@@ -1,0 +1,7 @@
+{%load crispy_forms_tags %} 
+<h4 class="py-3 mb-4">{{ header | capfirst}}</h4>
+<form action="portal/{{header}}" method="post"></form>
+    {% csrf_token %}
+    {{ form | crispy }}
+    <input type="submit" value="Submit">
+</form>
